@@ -25,7 +25,7 @@ private:
 public:
     
     /**
-     * Random pontok létrehozása
+     * Creating random points
      */
     Vector() {
         x=rand()%100;
@@ -34,14 +34,20 @@ public:
     }
     
     
-    /** parameteres konstruktor -» megadja a kezdoerteket */
+    /**
+     * @param xp point of x coordinate
+     * @param yp point of y coordinate
+     * @param zp point of z coordinate
+     */
     Vector (float xp, float yp, float zp) {
         x = xp;
         y = yp;
         z = zp;
     }
     
-    /** kiirja a a random generált szamokat */
+    /**
+     * Write out the random coordinates of the point (in 3D sapce)
+     */
     void print () {
         printf("Coordinates of point: x=%.2f, y=%.2f, z=%.2f \n", x, y, z) ;
     }
@@ -49,8 +55,8 @@ public:
     
     /**
      * Calculate distance function
-     * @param v a ket pont kozotti tavolsag kiszamitasahoz valo fuggvenyben hasznalom
-     * @return 0
+     * @param v using in the Pythagorean theorem as a point
+     * @return the distance between two points (length)
      */
     
     double getlength(Vector v){
