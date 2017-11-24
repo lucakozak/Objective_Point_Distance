@@ -4,7 +4,11 @@
 //
 //  Created by Kozak, Luca on 2017. 11. 17..
 //  Copyright © 2017. Kozak, Luca. All rights reserved.
-//
+
+
+/**
+ * Creating random points and calculating the shortest and longest distance.
+ */
 
 #include <iostream>
 #include <vector>
@@ -13,10 +17,7 @@
 #include <random>
 #include <cmath>
 
-/**
- * Including the Class
- */
-#include "vectoreader.h"
+#include "Vector.h"
 
 using namespace std;
 
@@ -29,17 +30,8 @@ int main (){
     printf("Number of the points: ");
     scanf("%d", &n);
     
-    
-    /**
-     * Reserve place in the heap for our Vectors
-     */
-    
     Vector *vectors = (Vector *)malloc(sizeof(Vector)*n);
     
-    
-    /**
-     * A loop with the calling of the printf function
-     */
     
     for(int i = 0; i < n; i++)
     {
@@ -47,9 +39,6 @@ int main (){
         vectors[i].print();
     }
     
-    /**
-     *Giving value for min&max for the calculation
-     */
     double max=0,   min=1000000, d;
     for (i=1; i<=n; i++) {
         
@@ -57,9 +46,6 @@ int main (){
             
             if (i != j) {
                 
-                /**
-                 *Using the calculate function from the header
-                 */
                 d = vectors[i].getlength(vectors[j]);
                 
                 if(d>max) max = d;
@@ -71,7 +57,7 @@ int main (){
     printf("max = %f \n",max);
     printf("min = %f \n",min);
     
-
-    free(vectors); /**Free the allocated memory*/
+    
+    free(vectors);
     return 0;
 }
